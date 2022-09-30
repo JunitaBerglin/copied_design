@@ -1,0 +1,15 @@
+@use "startpage";
+@use "mixins";
+@use "variables";
+
+
+
+html{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, serif;
+    font-size: 14pt;
+
+}
+
+.container__mobile{
+ @include mixins.container__mobile;
+}
