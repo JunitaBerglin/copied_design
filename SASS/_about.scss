@@ -1,0 +1,25 @@
+@mixin gubbe {
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+@mixin text_about {
+  background-color: lightgrey;
+  padding: 27px;
+  width: 45%;
+  font-size: 13px;
+  text-align: center;
+  border-radius: 5px;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.names {
+  font-size: 13px;
+  font-weight: bold;
+}

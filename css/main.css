@@ -1,10 +1,270 @@
+@charset "UTF-8";
+h1 {
+  width: 100vw;
+  text-align: center;
+}
+
+/* navbar */
+.top-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(255, 255, 255, 0.2);
+  height: 50px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: white;
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu > li {
+  margin: 0 1rem;
+  overflow: hidden;
+}
+
+.menu-button-container {
+  display: none;
+  height: 100%;
+  width: 30px;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-right: 15px;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+.menu-button,
+.menu-button::before,
+.menu-button::after {
+  display: block;
+  background-color: #fff;
+  position: absolute;
+  height: 4px;
+  width: 30px;
+  transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  border-radius: 2px;
+}
+
+.menu-button::before {
+  content: "";
+  margin-top: -8px;
+}
+
+.menu-button::after {
+  content: "";
+  margin-top: 8px;
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::before {
+  margin-top: 0px;
+  transform: rotate(405deg);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button {
+  background: rgba(255, 255, 255, 0);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::after {
+  margin-top: 0px;
+  transform: rotate(-405deg);
+}
+
+@media (max-width: 700px) {
+  .menu-button-container {
+    display: flex;
+  }
+  .menu {
+    position: absolute;
+    top: 0;
+    margin-top: 50px;
+    left: 0;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  #menu-toggle ~ .menu li {
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  #menu-toggle:checked ~ .menu li {
+    height: 1em;
+    padding: 0.5em;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .menu > li {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0.5em 0;
+    width: 100%;
+    color: white;
+  }
+}
+/*slut på navbar*/
+.names {
+  font-size: 13px;
+  font-weight: bold;
+}
+
 html {
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, serif;
+  font-family: "Times New Roman", Times, serif;
   font-size: 14pt;
+  color: #000;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.background__image {
+  background-image: url("../assets/negative-space-black-forest-dawn.jpg");
+  display: flex;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+  align-items: center;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
 }
 
 .container__mobile {
-  background-color: beige;
+  justify-content: center;
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+}
+.container__mobile .text_wrapper {
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+}
+.container__mobile .text_wrapper P,
+.container__mobile .text_wrapper H1 {
+  flex-basis: 100%;
+  text-align: center;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.gubbe {
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  display: flex;
+  justify-content: space-evenly;
+}
+@media screen and (min-width: 1200px) {
+  .gubbe {
+    width: 450px;
+    margin: 20px;
+    justify-content: space-around;
+  }
+}
+
+img {
+  border-radius: 100px;
+  box-shadow: 0px 5px 15px;
+  margin: 15px;
+}
+
+.quote-mark {
+  display: inline-block;
+  font-size: 35px;
+  transform: rotate(180deg);
+}
+
+.text_about {
+  background-color: lightgrey;
+  padding: 27px;
+  width: 45%;
+  font-size: 13px;
+  text-align: center;
+  border-radius: 5px;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+footer {
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+footer .contact {
+  display: block;
+  flex-direction: column;
+  padding-left: 25%;
+}
+@media screen and (min-width: 1200px) {
+  footer .contact {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 0px;
+  }
+}
+footer .contact__info {
+  margin: 50px 0px 50px 0px;
+}
+
+.arrow1 {
+  position: absolute;
+  top: 660px;
+  right: 50px;
+  left: 49%;
+  color: #fff;
+}
+
+.arrow2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.arrow2 .arrow__black {
+  color: #000;
+  text-align: center;
 }
 
 /*# sourceMappingURL=main.css.map */

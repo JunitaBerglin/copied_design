@@ -1,15 +1,109 @@
-@use "startpage";
+@use "variables" as v;
+@use "welcome";
 @use "mixins";
 @use "variables";
+@use "about";
 
-
-
-html{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, serif;
-    font-size: 14pt;
-
+html {
+  font-family: v.$primary_font;
+  font-size: 14pt;
+  color: v.$font_color;
 }
 
-.container__mobile{
- @include mixins.container__mobile;
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.background__image {
+  background-image: url("../assets/negative-space-black-forest-dawn.jpg");
+  display: flex;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+  align-items: center;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+}
+
+.container__mobile {
+  @include welcome.container__mobile;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.gubbe {
+  @include about.gubbe;
+
+  @include mixins.desktop {
+    width: 450px;
+    margin: 20px;
+    justify-content: space-around;
+  }
+}
+
+img {
+  border-radius: 100px;
+  box-shadow: 0px 5px 15px;
+  margin: 15px;
+}
+
+.quote-mark {
+  @include mixins.quote-mark;
+}
+
+.text_about {
+  @include about.text_about;
+}
+
+footer {
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  .contact {
+    display: block;
+    flex-direction: column;
+    padding-left: 25%;
+
+    @include mixins.desktop {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      padding: 0px;
+    }
+  }
+  .contact__info {
+    margin: 50px 0px 50px 0px;
+  }
+}
+.arrow1 {
+  position: absolute;
+  top: 660px;
+  right: 50px;
+  left: 49%;
+  color: #fff;
+}
+
+.arrow2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  .arrow__black {
+    color: #000;
+    text-align: center;
+  }
 }
