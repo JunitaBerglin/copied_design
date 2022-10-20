@@ -1,0 +1,13 @@
+@use "variables" as v;
+
+@mixin quote-mark {
+  display: inline-block;
+  font-size: 35px;
+  transform: rotate(180deg);
+}
+
+@mixin desktop {
+  @media screen and (min-width: v.$desktop) {
+    @content;
+  }
+}
